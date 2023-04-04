@@ -1,0 +1,235 @@
+:root {
+    --base-font-size: 18px;
+    --space-xs: 12px;
+    --space-s: 16px;
+    --space-m: 24px;
+    --space-l: 32px;
+    --space-xl: 40px;
+    --text-color: #333333;
+    --hover-color: blue;
+    --personal-bg: rgba(169, 182, 214, 0.4);
+    --experience-bg: #FDFEF9;
+    --skills-columns: 4;
+}
+
+html {
+    font-size: var(--base-font-size);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    color: var(--text-color);
+}
+
+.personal {
+    width: 35%;
+    text-align: center;
+    padding: var(--space-xl) var(--space-m) var(--space-m);
+    background-color: var(--personal-bg);
+}
+
+.experience {
+    width: 65%;
+    padding: var(--space-xl) var(--space-m) 0;
+    background-color: var(--experience-bg);
+}
+
+.personal__header {
+    margin-bottom: var(--space-l);
+}
+
+.personal__name {
+    font-size: 2rem;
+    margin-bottom: var(--space-s);
+    font-weight: 600;
+}
+
+.personal__title {
+    font-size: 1.11rem;
+    font-weight: 500;
+}
+
+.personal__block > .personal__title {
+    display: flex;
+    column-gap: var(--space-s);
+    align-items: center;
+    justify-content: center;
+}
+
+.personal__block > .personal__title::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 69px;
+    background-color: var(--text-color);
+}
+
+.personal__block > .personal__title::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 69px;
+    background-color: var(--text-color);
+}
+
+.personal__text {
+    margin-top: var(--space-s);
+    font-size: 0.889rem;
+    line-height: 1.25rem;
+}
+
+.personal__skills {
+    margin-top: var(--space-m);
+    display: grid;
+    grid-template-columns: repeat(var(--skills-columns), minmax(0, 1fr));
+    column-gap: 8px;
+}
+
+.personal__skill {
+    flex: 1 0 calc(100% / var(--skills-columns));
+    margin-bottom: var(--space-s);
+}
+
+.personal__languages {
+    margin-top: var(--space-xl);
+    text-align: left;
+}
+
+.personal__language {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-s);
+    margin-left: var(--space-m);
+    margin-top: var(--space-m);
+}
+
+.personal__location {
+    display: flex;
+    column-gap: var(--space-m);
+    margin: var(--space-xl) 0 var(--space-xl) var(--space-m);
+}
+
+.personal__location-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-xs);
+    text-align: left;
+}
+
+.personal__location-caption {
+    font-weight: 500;
+    text-align: right;
+}
+
+.personal__location_link {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.personal__location_link-active {
+    text-decoration: underline;
+}
+
+.personal__location_link:hover {
+    color: var(--hover-color);
+}
+
+.experience__block {
+    margin-bottom: var(--space-l);
+}
+
+.experience__title {
+    font-weight: 600;
+    font-size: 1.11rem;
+    line-height: 1.33rem;
+    text-align: center;
+}
+
+.experience__title-name {
+    text-align: left;
+}
+
+.experience__title-year {
+    text-align: right;
+}
+
+.experience__subtitle {
+    font-weight: 500;
+}
+
+.experience__item {
+    margin-top: var(--space-m);
+}
+
+.experience__item-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-s);
+}
+
+.experience__item-text {
+    line-height: 1.39rem;
+}
+
+.experience__item-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-s);
+}
+
+.experience__item-list {
+    list-style: '- ' inside;
+}
+
+.experience__item-link {
+    color: var(--text-color);
+}
+
+.experience__item-link:hover {
+    color: var(--hover-color);
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --base-font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .personal {
+        width: auto;
+    }
+
+    .experience {
+        width: auto;
+    }
+
+    .personal__location {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .personal__language {
+        margin-left: 0;
+        align-items: center;
+    }
+
+    .personal__skills {
+        max-width: 500px;
+        margin: var(--space-m) auto 0;
+    }
+}
